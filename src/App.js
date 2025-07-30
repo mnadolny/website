@@ -4,13 +4,14 @@ import InteractiveBlob from './components/InteractiveBlob';
 import AnimatedContent from './components/AnimatedContent';
 import ParticleBackground from './components/ParticleBackground';
 import LiquidBackground from './components/LiquidBackground';
+import MagicalGradientBackground from './components/MagicalGradientBackground';
 
 function App() {
   return (
     <div className="App">
-      {/* Liquid Background */}
-      {/* <LiquidBackground /> */}
-      <ParticleBackground />
+      {/* Magical Gradient Background */}
+      <MagicalGradientBackground />
+      {/* <ParticleBackground /> */}
       
       {/* Header */}
       <header className="header">
