@@ -1,9 +1,13 @@
 import React from 'react';
 import DarkVeil from './components/DarkVeil';
+import InteractiveBlob from './components/InteractiveBlob';
 
 function App() {
   return (
     <div className="App">
+      {/* Interactive Blob Background */}
+      <InteractiveBlob />
+      
       {/* Header */}
       <header className="header">
         <div className="header-content">
@@ -25,8 +29,7 @@ function App() {
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
-              We create digital solutions that <strong>connect people</strong>
-              to news, entertainment, and ideas.
+              We create digital solutions that <strong>connect people </strong> to news, entertainment, and ideas.
             </h1>
             
             <div className="hero-image">

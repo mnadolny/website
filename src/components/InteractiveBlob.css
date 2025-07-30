@@ -1,0 +1,166 @@
+.interactive-blob-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.interactive-blob {
+  position: absolute;
+  will-change: transform, background, border-radius;
+  transform-origin: center center;
+  filter: blur(100px);
+  opacity: 0.85;
+}
+
+.blob-main {
+  width: 1600px;
+  height: 1600px;
+  background: radial-gradient(
+    ellipse 140% 90% at 30% 40%,
+    hsla(280, 85%, 65%, 0.9) 0%,
+    hsla(320, 80%, 55%, 0.7) 40%,
+    hsla(40, 85%, 50%, 0.4) 70%,
+    transparent 100%
+  );
+  animation: melt-main 18s ease-in-out infinite;
+}
+
+.blob-secondary {
+  width: 1400px;
+  height: 1400px;
+  background: radial-gradient(
+    ellipse 130% 110% at 60% 70%,
+    hsla(200, 80%, 60%, 0.7) 0%,
+    hsla(260, 85%, 50%, 0.5) 50%,
+    hsla(320, 80%, 45%, 0.3) 80%,
+    transparent 100%
+  );
+  animation: melt-secondary 22s ease-in-out infinite;
+}
+
+.blob-tertiary {
+  width: 1200px;
+  height: 1200px;
+  background: radial-gradient(
+    ellipse 120% 140% at 40% 30%,
+    hsla(160, 75%, 55%, 0.6) 0%,
+    hsla(220, 80%, 50%, 0.4) 60%,
+    hsla(300, 75%, 45%, 0.2) 90%,
+    transparent 100%
+  );
+  animation: melt-tertiary 25s ease-in-out infinite;
+}
+
+@keyframes melt-main {
+  0% {
+    border-radius: 20% 80% 30% 70% / 70% 20% 80% 30%;
+  }
+  25% {
+    border-radius: 70% 30% 80% 20% / 30% 70% 20% 80%;
+  }
+  50% {
+    border-radius: 40% 60% 20% 80% / 80% 40% 60% 20%;
+  }
+  75% {
+    border-radius: 80% 20% 60% 40% / 20% 80% 40% 60%;
+  }
+  100% {
+    border-radius: 20% 80% 30% 70% / 70% 20% 80% 30%;
+  }
+}
+
+@keyframes melt-secondary {
+  0% {
+    border-radius: 60% 40% 70% 30% / 30% 70% 40% 60%;
+  }
+  20% {
+    border-radius: 30% 70% 40% 60% / 60% 30% 70% 40%;
+  }
+  40% {
+    border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%;
+  }
+  60% {
+    border-radius: 40% 60% 30% 70% / 70% 40% 60% 30%;
+  }
+  80% {
+    border-radius: 50% 50% 80% 20% / 20% 80% 50% 50%;
+  }
+  100% {
+    border-radius: 60% 40% 70% 30% / 30% 70% 40% 60%;
+  }
+}
+
+@keyframes melt-tertiary {
+  0% {
+    border-radius: 80% 20% 40% 60% / 60% 40% 20% 80%;
+  }
+  30% {
+    border-radius: 20% 80% 60% 40% / 40% 60% 80% 20%;
+  }
+  60% {
+    border-radius: 40% 60% 20% 80% / 80% 20% 60% 40%;
+  }
+  90% {
+    border-radius: 60% 40% 80% 20% / 20% 80% 40% 60%;
+  }
+  100% {
+    border-radius: 80% 20% 40% 60% / 60% 40% 20% 80%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blob-main {
+    width: 1200px;
+    height: 1200px;
+  }
+  .blob-secondary {
+    width: 1000px;
+    height: 1000px;
+  }
+  .blob-tertiary {
+    width: 800px;
+    height: 800px;
+  }
+  .interactive-blob {
+    filter: blur(80px);
+  }
+}
+
+@media (max-width: 480px) {
+  .blob-main {
+    width: 1000px;
+    height: 1000px;
+  }
+  .blob-secondary {
+    width: 800px;
+    height: 800px;
+  }
+  .blob-tertiary {
+    width: 600px;
+    height: 600px;
+  }
+  .interactive-blob {
+    filter: blur(60px);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .interactive-blob {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  .interactive-blob {
+    opacity: 0.3;
+  }
+}
