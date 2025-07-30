@@ -2,12 +2,15 @@ import React from 'react';
 import DarkVeil from './components/DarkVeil';
 import InteractiveBlob from './components/InteractiveBlob';
 import AnimatedContent from './components/AnimatedContent';
+import ParticleBackground from './components/ParticleBackground';
+import LiquidBackground from './components/LiquidBackground';
 
 function App() {
   return (
     <div className="App">
-      {/* Interactive Blob Background */}
-      <InteractiveBlob />
+      {/* Liquid Background */}
+      {/* <LiquidBackground /> */}
+      <ParticleBackground />
       
       {/* Header */}
       <header className="header">
@@ -34,10 +37,10 @@ function App() {
             </h1>
             
             <AnimatedContent
-              distance={150}
+              distance={50}
               direction="vertical"
               reverse={false}
-              duration={1.2}
+              duration={0.8}
               ease="power3.out"
               initialOpacity={0.2}
               animateOpacity
