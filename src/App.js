@@ -1,6 +1,7 @@
 import React from 'react';
 import DarkVeil from './components/DarkVeil';
 import InteractiveBlob from './components/InteractiveBlob';
+import AnimatedContent from './components/AnimatedContent';
 
 function App() {
   return (
@@ -32,9 +33,22 @@ function App() {
               We create digital solutions that <strong>connect people </strong> to news, entertainment, and ideas.
             </h1>
             
-            <div className="hero-image">
-              <img src="http://localhost:3845/assets/def3681d9678932fb30e5cdae4a88f133b653965.png" alt="Digital Solutions" className="hero-bg" />
-            </div>
+            <AnimatedContent
+              distance={150}
+              direction="vertical"
+              reverse={false}
+              duration={1.2}
+              ease="power3.out"
+              initialOpacity={0.2}
+              animateOpacity
+              scale={1.05}
+              threshold={0.2}
+              delay={0.3}
+            >
+              <div className="hero-image">
+                <img src="http://localhost:3845/assets/def3681d9678932fb30e5cdae4a88f133b653965.png" alt="Digital Solutions" className="hero-bg" />
+              </div>
+            </AnimatedContent>
           </div>
         </div>
       </section>
@@ -42,53 +56,137 @@ function App() {
       {/* What We've Built Section */}
       <section className="projects">
         <div className="container">
-          <div className="section-header">
-            <h2>What We've Built</h2>
-            <div className="view-all-badge">VIEW ALL</div>
-          </div>
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            duration={1.0}
+            ease="power3.out"
+            initialOpacity={0}
+            animateOpacity
+            threshold={0.1}
+            delay={0.1}
+          >
+            <div className="section-header">
+              <h2>What We've Built</h2>
+              <div className="view-all-badge">VIEW ALL</div>
+            </div>
+          </AnimatedContent>
           
           <div className="projects-grid">
-            <div className="project-card">
-              <img src="http://localhost:3845/assets/079a65832b104090d909305eb3534b2b53a15cc4.png" alt="Savage Ventures" className="project-image" />
-              <div className="project-info">
-                <h3>Savage Ventures</h3>
+            <AnimatedContent
+              distance={80}
+              direction="vertical"
+              reverse={false}
+              duration={0.9}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              threshold={0.1}
+              delay={0.2}
+            >
+              <div className="project-card">
+                <img src="http://localhost:3845/assets/079a65832b104090d909305eb3534b2b53a15cc4.png" alt="Savage Ventures" className="project-image" />
+                <div className="project-info">
+                  <h3>Savage Ventures</h3>
+                </div>
               </div>
-            </div>
+            </AnimatedContent>
             
-            <div className="project-card">
-              <img src="http://localhost:3845/assets/08ab4df3bd6f6d250ef7055e43e31f5062b3778b.png" alt="NCOA" className="project-image" />
-              <div className="project-info">
-                <h3>ncoa</h3>
+            <AnimatedContent
+              distance={80}
+              direction="vertical"
+              reverse={false}
+              duration={0.9}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              threshold={0.1}
+              delay={0.3}
+            >
+              <div className="project-card">
+                <img src="http://localhost:3845/assets/08ab4df3bd6f6d250ef7055e43e31f5062b3778b.png" alt="NCOA" className="project-image" />
+                <div className="project-info">
+                  <h3>ncoa</h3>
+                </div>
               </div>
-            </div>
+            </AnimatedContent>
             
-            <div className="project-card">
-              <img src="http://localhost:3845/assets/38ea09fa109c19e7f9511e7db8c846f4e114f32c.png" alt="WPR" className="project-image" />
-              <div className="project-info">
-                <h3>WPR</h3>
+            <AnimatedContent
+              distance={80}
+              direction="vertical"
+              reverse={false}
+              duration={0.9}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              threshold={0.1}
+              delay={0.4}
+            >
+              <div className="project-card">
+                <img src="http://localhost:3845/assets/38ea09fa109c19e7f9511e7db8c846f4e114f32c.png" alt="WPR" className="project-image" />
+                <div className="project-info">
+                  <h3>WPR</h3>
+                </div>
               </div>
-            </div>
+            </AnimatedContent>
             
-            <div className="project-card">
-              <img src="http://localhost:3845/assets/52d2501615d253d551aaf86fa75b8a9787e41273.png" alt="NCSES" className="project-image" />
-              <div className="project-info">
-                <h3>NCSES</h3>
+            <AnimatedContent
+              distance={80}
+              direction="vertical"
+              reverse={false}
+              duration={0.9}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              threshold={0.1}
+              delay={0.5}
+            >
+              <div className="project-card">
+                <img src="http://localhost:3845/assets/52d2501615d253d551aaf86fa75b8a9787e41273.png" alt="NCSES" className="project-image" />
+                <div className="project-info">
+                  <h3>NCSES</h3>
+                </div>
               </div>
-            </div>
+            </AnimatedContent>
             
-            <div className="project-card">
-              <img src="http://localhost:3845/assets/80b21953ca0ad571beae5065399b2a00bd52ab38.png" alt="Hachette" className="project-image" />
-              <div className="project-info">
-                <h3>Hachette</h3>
+            <AnimatedContent
+              distance={80}
+              direction="vertical"
+              reverse={false}
+              duration={0.9}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              threshold={0.1}
+              delay={0.6}
+            >
+              <div className="project-card">
+                <img src="http://localhost:3845/assets/80b21953ca0ad571beae5065399b2a00bd52ab38.png" alt="Hachette" className="project-image" />
+                <div className="project-info">
+                  <h3>Hachette</h3>
+                </div>
               </div>
-            </div>
+            </AnimatedContent>
             
-            <div className="project-card">
-              <img src="http://localhost:3845/assets/b45ff6ab287af48eb9340251f09a4555dff1ee72.png" alt="TheWrap" className="project-image" />
-              <div className="project-info">
-                <h3>TheWrap</h3>
+            <AnimatedContent
+              distance={80}
+              direction="vertical"
+              reverse={false}
+              duration={0.9}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              threshold={0.1}
+              delay={0.7}
+            >
+              <div className="project-card">
+                <img src="http://localhost:3845/assets/b45ff6ab287af48eb9340251f09a4555dff1ee72.png" alt="TheWrap" className="project-image" />
+                <div className="project-info">
+                  <h3>TheWrap</h3>
+                </div>
               </div>
-            </div>
+            </AnimatedContent>
           </div>
         </div>
       </section>
