@@ -5,12 +5,13 @@ import AnimatedContent from './components/AnimatedContent';
 import ParticleBackground from './components/ParticleBackground';
 import LiquidBackground from './components/LiquidBackground';
 import MagicalGradientBackground from './components/MagicalGradientBackground';
+import ThreeScene from './components/ThreeScene';
 
 function App() {
   return (
     <div className="App">
       {/* Magical Gradient Background */}
-      <MagicalGradientBackground />
+      {/* <MagicalGradientBackground /> */}
       {/* <ParticleBackground /> */}
       
       {/* Header */}
@@ -62,8 +63,8 @@ function App() {
         <div className="container">
           <AnimatedContent
             distance={100}
-            direction="vertical"
-            reverse={false}
+            direction="horizontal"
+            reverse={true}
             duration={1.0}
             ease="power3.out"
             initialOpacity={0}
@@ -80,8 +81,8 @@ function App() {
           <div className="projects-grid">
             <AnimatedContent
               distance={80}
-              direction="vertical"
-              reverse={false}
+              direction="horizontal"
+              reverse={true}
               duration={0.9}
               ease="power3.out"
               initialOpacity={0}
@@ -99,7 +100,7 @@ function App() {
             
             <AnimatedContent
               distance={80}
-              direction="vertical"
+              direction="horizontal"
               reverse={false}
               duration={0.9}
               ease="power3.out"
@@ -118,8 +119,8 @@ function App() {
             
             <AnimatedContent
               distance={80}
-              direction="vertical"
-              reverse={false}
+              direction="horizontal"
+              reverse={true}
               duration={0.9}
               ease="power3.out"
               initialOpacity={0}
@@ -137,7 +138,7 @@ function App() {
             
             <AnimatedContent
               distance={80}
-              direction="vertical"
+              direction="horizontal"
               reverse={false}
               duration={0.9}
               ease="power3.out"
@@ -156,8 +157,8 @@ function App() {
             
             <AnimatedContent
               distance={80}
-              direction="vertical"
-              reverse={false}
+              direction="horizontal"
+              reverse={true}
               duration={0.9}
               ease="power3.out"
               initialOpacity={0}
@@ -175,7 +176,7 @@ function App() {
             
             <AnimatedContent
               distance={80}
-              direction="vertical"
+              direction="horizontal"
               reverse={false}
               duration={0.9}
               ease="power3.out"
@@ -223,6 +224,16 @@ function App() {
                 <img src="http://localhost:3845/assets/1642944defff67624b177d2510275fc939e248b6.svg" alt="New York Post" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Three.js Demo Section */}
+      <section className="three-demo" style={{ height: '500px', margin: '50px 0' }}>
+        <div className="container">
+          <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Three.js Scene Demo</h2>
+          <div style={{ height: '400px', width: '100%', border: '1px solid #333' }}>
+            <ThreeScene />
           </div>
         </div>
       </section>
