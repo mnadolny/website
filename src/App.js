@@ -6,6 +6,7 @@ import ParticleBackground from './components/ParticleBackground';
 import LiquidBackground from './components/LiquidBackground';
 import MagicalGradientBackground from './components/MagicalGradientBackground';
 import ThreeScene from './components/ThreeScene';
+import ThreeLetterA from './components/ThreeLetterA';
 
 function App() {
   return (
@@ -229,11 +230,19 @@ function App() {
       </section>
 
       {/* Three.js Demo Section */}
-      <section className="three-demo" style={{ height: '500px', margin: '50px 0' }}>
+      <section className="three-demo" style={{ margin: '50px 0' }}>
         <div className="container">
           <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Three.js Scene Demo</h2>
-          <div style={{ height: '400px', width: '100%', border: '1px solid #333' }}>
+          
+          {/* Existing Particle Scene */}
+          <div style={{ height: '400px', width: '100%', border: '1px solid #333', marginBottom: '30px' }}>
             <ThreeScene />
+          </div>
+          
+          {/* New 3D Letter A Scene */}
+          <h3 style={{ textAlign: 'center', marginBottom: '20px' }}>3D Letter 'A'</h3>
+          <div style={{ height: '400px', width: '100%', border: '1px solid #333' }}>
+            <ThreeLetterA />
           </div>
         </div>
       </section>
