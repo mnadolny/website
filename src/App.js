@@ -7,6 +7,8 @@ import LiquidBackground from './components/LiquidBackground';
 import MagicalGradientBackground from './components/MagicalGradientBackground';
 import ThreeScene from './components/ThreeScene';
 import ThreeLetterA from './components/ThreeLetterA';
+import ImageCycler from './components/ImageCycler';
+import './components/ImageCycler.css';
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
       {/* Magical Gradient Background */}
       {/* <MagicalGradientBackground /> */}
       {/* <ParticleBackground /> */}
-      
+
       {/* Header */}
       <header className="header">
         <div className="header-content">
@@ -28,17 +30,13 @@ function App() {
         </div>
       </header>
 
-      {/* Hero Section with DarkVeil Background */}
       <section className="hero">
-        <div className="hero-background">
-          {/* DarkVeil temporarily disabled - causes content to disappear */}
-        </div>
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
               We create digital solutions that <strong>connect people </strong> to news, entertainment, and ideas.
             </h1>
-            
+
             <AnimatedContent
               distance={50}
               direction="vertical"
@@ -52,7 +50,19 @@ function App() {
               delay={0.3}
             >
               <div className="hero-image">
-                <img src="http://localhost:3845/assets/def3681d9678932fb30e5cdae4a88f133b653965.png" alt="Digital Solutions" className="hero-bg" />
+                <ImageCycler 
+                  images={[
+                    '/hero-images/ncoa-hero.png',
+                    '/hero-images/vice-hero.png',
+                    '/hero-images/hachette-hero-1.png',
+                    '/hero-images/data-hero.png',
+                    '/hero-images/hachette-hero.png',
+                    '/hero-images/vice-hero-1.png',
+                    '/hero-images/sciencenews-hero.png',
+                  ]}
+                  interval={1400}
+                  className="hero-bg"
+                />
               </div>
             </AnimatedContent>
           </div>
@@ -78,7 +88,7 @@ function App() {
               <div className="view-all-badge">VIEW ALL</div>
             </div>
           </AnimatedContent>
-          
+
           <div className="projects-grid">
             <AnimatedContent
               distance={80}
@@ -98,7 +108,7 @@ function App() {
                 </div>
               </div>
             </AnimatedContent>
-            
+
             <AnimatedContent
               distance={80}
               direction="horizontal"
@@ -117,7 +127,7 @@ function App() {
                 </div>
               </div>
             </AnimatedContent>
-            
+
             <AnimatedContent
               distance={80}
               direction="horizontal"
@@ -136,7 +146,7 @@ function App() {
                 </div>
               </div>
             </AnimatedContent>
-            
+
             <AnimatedContent
               distance={80}
               direction="horizontal"
@@ -155,7 +165,7 @@ function App() {
                 </div>
               </div>
             </AnimatedContent>
-            
+
             <AnimatedContent
               distance={80}
               direction="horizontal"
@@ -174,7 +184,7 @@ function App() {
                 </div>
               </div>
             </AnimatedContent>
-            
+
             <AnimatedContent
               distance={80}
               direction="horizontal"
@@ -200,29 +210,129 @@ function App() {
       {/* Partners Section */}
       <section className="partners">
         <div className="container">
-          <p className="partners-text">We care deeply about the long-term success of our partners.</p>
-          
-          <div className="partner-logos-grid">
-            <div className="partner-row">
-              <div className="partner-logo">
-                <img src="http://localhost:3845/assets/c5f27162936e61ec291a4485f2c5a10c1e263c4e.svg" alt="Science News" />
+
+          <div className="partners-content">
+            <AnimatedContent
+              distance={60}
+              direction="vertical"
+              reverse={false}
+              duration={0.8}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              threshold={0.1}
+              delay={0.1}
+            >
+              <div className="section-header">
+                <h2>We care deeply about the long-term success of our partners.</h2>
               </div>
-              <div className="partner-logo">
-                <img src="http://localhost:3845/assets/1642944defff67624b177d2510275fc939e248b6.svg" alt="DirectRelief" />
+            </AnimatedContent>
+            <div className="partners-logos">
+              <div className="partners-row">
+                <AnimatedContent
+                  distance={50}
+                  direction="vertical"
+                  reverse={false}
+                  duration={0.6}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  threshold={0.1}
+                  delay={0.2}
+                >
+                  <div className="partner-card glass-card">
+                    <div className="logo-container">
+                      <img src="/images/science-news-logo.png" alt="Science News" />
+                    </div>
+                  </div>
+                </AnimatedContent>
+                <AnimatedContent
+                  distance={50}
+                  direction="vertical"
+                  reverse={false}
+                  duration={0.6}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  threshold={0.1}
+                  delay={0.3}
+                >
+                  <div className="partner-card glass-card">
+                    <div className="logo-container">
+                      <img src="http://localhost:3845/assets/8b3b0e4231361f3dcd67aac86973de1969b57b85.svg" alt="Direct Relief" />
+                    </div>
+                  </div>
+                </AnimatedContent>
+                <AnimatedContent
+                  distance={50}
+                  direction="vertical"
+                  reverse={false}
+                  duration={0.6}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  threshold={0.1}
+                  delay={0.4}
+                >
+                  <div className="partner-card glass-card">
+                    <div className="logo-container">
+                      <img src="http://localhost:3845/assets/1642944defff67624b177d2510275fc939e248b6.svg" alt="DirectRelief" />
+                    </div>
+                  </div>
+                </AnimatedContent>
               </div>
-              <div className="partner-logo">
-                <img src="http://localhost:3845/assets/1642944defff67624b177d2510275fc939e248b6.svg" alt="New York Post" />
-              </div>
-            </div>
-            <div className="partner-row">
-              <div className="partner-logo">
-                <img src="http://localhost:3845/assets/c5f27162936e61ec291a4485f2c5a10c1e263c4e.svg" alt="Science News" />
-              </div>
-              <div className="partner-logo">
-                <img src="http://localhost:3845/assets/1642944defff67624b177d2510275fc939e248b6.svg" alt="DirectRelief" />
-              </div>
-              <div className="partner-logo">
-                <img src="http://localhost:3845/assets/1642944defff67624b177d2510275fc939e248b6.svg" alt="New York Post" />
+              <div className="partners-row">
+                <AnimatedContent
+                  distance={50}
+                  direction="vertical"
+                  reverse={false}
+                  duration={0.6}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  threshold={0.1}
+                  delay={0.5}
+                >
+                  <div className="partner-card glass-card">
+                    <div className="logo-container">
+                      <img src="/images/science-news-logo.png" alt="Science News" />
+                    </div>
+                  </div>
+                </AnimatedContent>
+                <AnimatedContent
+                  distance={50}
+                  direction="vertical"
+                  reverse={false}
+                  duration={0.6}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  threshold={0.1}
+                  delay={0.6}
+                >
+                  <div className="partner-card glass-card">
+                    <div className="logo-container">
+                      <img src="http://localhost:3845/assets/8b3b0e4231361f3dcd67aac86973de1969b57b85.svg" alt="Direct Relief" />
+                    </div>
+                  </div>
+                </AnimatedContent>
+                <AnimatedContent
+                  distance={50}
+                  direction="vertical"
+                  reverse={false}
+                  duration={0.6}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  threshold={0.1}
+                  delay={0.7}
+                >
+                  <div className="partner-card glass-card">
+                    <div className="logo-container">
+                      <img src="http://localhost:3845/assets/1642944defff67624b177d2510275fc939e248b6.svg" alt="DirectRelief" />
+                    </div>
+                  </div>
+                </AnimatedContent>
               </div>
             </div>
           </div>
@@ -233,17 +343,17 @@ function App() {
       <section className="three-demo" style={{ margin: '50px 0' }}>
         <div className="container">
           <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Three.js Scene Demo</h2>
-          
+
           {/* Existing Particle Scene */}
           <div style={{ height: '400px', width: '100%', border: '1px solid #333', marginBottom: '30px' }}>
             <ThreeScene />
           </div>
-          
+
           {/* New 3D Letter A Scene */}
-          <h3 style={{ textAlign: 'center', marginBottom: '20px' }}>3D Letter 'A'</h3>
+          {/* <h3 style={{ textAlign: 'center', marginBottom: '20px' }}>3D Letter 'A'</h3>
           <div style={{ height: '400px', width: '100%', border: '1px solid #333' }}>
             <ThreeLetterA />
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

@@ -194,48 +194,112 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.partners-text {
-    font-size: 40px;
-    font-style: italic;
-    line-height: 1.3;
-    text-align: center;
-    margin-bottom: 80px;
-    letter-spacing: -0.8px;
-    color: #f2f2f2;
+.partners-content {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
 }
 
-.partner-logos-grid {
+.partners-title {
+    display: flex;
+    justify-content: center;
+}
+
+.partners-title p {
+    font-family: 'Proxima Sera', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 40px;
+    line-height: 1.3;
+    letter-spacing: -0.08px;
+    color: #f2f2f2;
+    text-align: center;
+    margin: 0;
+}
+
+.partners-logos {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.partner-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.partners-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    height: 276px;
+    align-items: center;
 }
 
-.partner-logo {
-    flex: 1;
+
+.partner-card {
     height: 276px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+}
+
+.partner-card.background-card {
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
+    border-radius: 21.09px;
 }
 
-.partner-logo img {
+.partner-card.background-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: patternShift 10s linear infinite;
+    opacity: 0.8;
+}
+
+.partner-card.glass-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 0.458px solid rgba(255, 255, 255, 0.1);
+    border-radius: 21.09px;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    box-shadow: 
+        0px -1.834px 3.668px 0px rgba(0, 0, 0, 0.5) inset,
+        0px 4px 24px 0px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.partner-card.glass-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0px -1.834px 3.668px 0px rgba(0, 0, 0, 0.5) inset,
+        0px 8px 32px 0px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 65px;
+    box-sizing: border-box;
+}
+
+.logo-container img {
+    max-height: 54px;
     max-width: 100%;
-    max-height: 100%;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-.partner-logo img:hover {
-    opacity: 1;
+.partner-card.glass-card:hover .logo-container img {
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
@@ -266,8 +330,20 @@ body {
         font-size: 36px;
     }
     
-    .partner-logo {
+    .partners-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .partner-card {
         height: 200px;
+    }
+    
+    .partner-card.glass-card {
+        padding: 50px;
+    }
+    
+    .partner-card.background-card {
+        display: flex;
     }
 }
 
@@ -287,15 +363,25 @@ body {
         width: 100%;
     }
     
-    .partner-row {
-        flex-direction: column;
+    .partners-row {
+        grid-template-columns: 1fr;
         gap: 20px;
+        height: auto;
     }
     
-    .partner-logo {
+    .partner-card {
         width: 100%;
         max-width: 400px;
         height: 150px;
+        margin: 0 auto;
+    }
+    
+    .partner-card.glass-card {
+        padding: 40px;
+    }
+    
+    .partner-card.background-card {
+        display: flex;
     }
 }
 
@@ -332,9 +418,8 @@ body {
         gap: 40px;
     }
     
-    .partners-text {
+    .partners-title p {
         font-size: 28px;
-        margin-bottom: 60px;
     }
     
     .header-content {
@@ -359,12 +444,54 @@ body {
         font-size: 20px;
     }
     
-    .partners-text {
+    .partners-title p {
         font-size: 22px;
     }
     
-    .partner-logo {
+    .partner-card {
         width: 100%;
         height: 120px;
+    }
+    
+    .partner-card.glass-card {
+        padding: 30px;
+    }
+    
+    .partner-card.background-card {
+        display: flex;
+        height: 120px;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes patternShift {
+    0% {
+        transform: scale(1.1) translateX(0);
+    }
+    50% {
+        transform: scale(1.15) translateX(-5px);
+    }
+    100% {
+        transform: scale(1.1) translateX(0);
     }
 }

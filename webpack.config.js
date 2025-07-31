@@ -10,7 +10,15 @@ module.exports = {
   },
   mode: 'development',
   devServer: {
-    static: './dist',
+    static: [
+      {
+        directory: path.join(__dirname, 'dist'),
+      },
+      {
+        directory: path.join(__dirname, 'public'),
+        publicPath: '/',
+      },
+    ],
     port: 3000,
     open: true,
   },
