@@ -166,14 +166,27 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    cursor: pointer;
+    position: relative;
 }
+
+.project-card .project-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
 
 .project-image {
     width: 100%;
     aspect-ratio: 637 / 346;
     object-fit: cover;
     display: block;
-    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
 }
 
 .project-info {
@@ -186,7 +199,9 @@ body {
     font-weight: 500;
     line-height: normal;
     flex-shrink: 0;
+    transition: color 0.3s ease;
 }
+
 
 /* Partners Section */
 .partners {
@@ -322,8 +337,14 @@ body {
 }
 
 @media (max-width: 1024px) {
+    .hero {
+        padding: 180px 0 100px;
+        min-height: auto;
+    }
+    
     .hero-title {
         font-size: 38px;
+        margin-bottom: 60px;
     }
     
     .section-header h2 {
@@ -399,9 +420,14 @@ body {
         padding: 0 20px;
     }
     
+    .hero {
+        padding: 120px 0 60px;
+        min-height: auto;
+    }
+    
     .hero-title {
         font-size: 32px;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
     
     .section-header {
@@ -432,8 +458,13 @@ body {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 100px 0 40px;
+    }
+    
     .hero-title {
         font-size: 24px;
+        margin-bottom: 30px;
     }
     
     .section-header h2 {

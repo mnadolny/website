@@ -6,7 +6,6 @@ import ParticleBackground from './components/ParticleBackground';
 import LiquidBackground from './components/LiquidBackground';
 import MagicalGradientBackground from './components/MagicalGradientBackground';
 import ThreeScene from './components/ThreeScene';
-import ThreeLetterA from './components/ThreeLetterA';
 import ImageCycler from './components/ImageCycler';
 import './components/ImageCycler.css';
 
@@ -19,23 +18,47 @@ function App() {
 
       {/* Header */}
       <header className="header">
-        <div className="header-content">
-          <button className="menu-toggle">
-            <img src="http://localhost:3845/assets/3837ac9105cb0da4b7d3484845b1c5026fb5579e.svg" alt="Menu" />
-          </button>
-          <div className="logo">
-            <img src="http://localhost:3845/assets/27d03463a798c29c5991d37b863cb140f9e8cf3d.svg" alt="Alley" className="logo-img" />
+        <AnimatedContent
+          distance={10}
+          direction="horizontal"
+          reverse={false}
+          duration={0.8}
+          ease="power3.out"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.05}
+          threshold={0.2}
+          delay={0.3}>
+          <div className="header-content">
+            <button className="menu-toggle">
+              <img src="http://localhost:3845/assets/3837ac9105cb0da4b7d3484845b1c5026fb5579e.svg" alt="Menu" />
+            </button>
+            <div className="logo">
+              <img src="http://localhost:3845/assets/27d03463a798c29c5991d37b863cb140f9e8cf3d.svg" alt="Alley" className="logo-img" />
+            </div>
+            <a href="#contact" className="contact-link">Contact Us</a>
           </div>
-          <a href="#contact" className="contact-link">Contact Us</a>
-        </div>
+        </AnimatedContent>
       </header>
 
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-title">
-              We create digital solutions that <strong>connect people </strong> to news, entertainment, and ideas.
-            </h1>
+            <AnimatedContent
+              distance={50}
+              direction="horizontal"
+              reverse={true}
+              duration={0.8}
+              ease="power3.out"
+              initialOpacity={0.2}
+              animateOpacity
+              scale={1.05}
+              threshold={0.2}
+              delay={0.3}>
+              <h1 className="hero-title">
+                We create digital solutions that <strong>connect people </strong> to news, entertainment, and ideas.
+              </h1>
+            </AnimatedContent>
 
             <AnimatedContent
               distance={50}
@@ -102,7 +125,9 @@ function App() {
               delay={0.2}
             >
               <div className="project-card">
-                <img src="http://localhost:3845/assets/079a65832b104090d909305eb3534b2b53a15cc4.png" alt="Savage Ventures" className="project-image" />
+                <div className="project-image-wrapper">
+                  <img src="http://localhost:3845/assets/079a65832b104090d909305eb3534b2b53a15cc4.png" alt="Savage Ventures" className="project-image" />
+                </div>
                 <div className="project-info">
                   <h3>Savage Ventures</h3>
                 </div>
@@ -121,7 +146,9 @@ function App() {
               delay={0.3}
             >
               <div className="project-card">
-                <img src="http://localhost:3845/assets/08ab4df3bd6f6d250ef7055e43e31f5062b3778b.png" alt="NCOA" className="project-image" />
+                <div className="project-image-wrapper">
+                  <img src="http://localhost:3845/assets/08ab4df3bd6f6d250ef7055e43e31f5062b3778b.png" alt="NCOA" className="project-image" />
+                </div>
                 <div className="project-info">
                   <h3>ncoa</h3>
                 </div>
@@ -140,7 +167,9 @@ function App() {
               delay={0.4}
             >
               <div className="project-card">
-                <img src="http://localhost:3845/assets/38ea09fa109c19e7f9511e7db8c846f4e114f32c.png" alt="WPR" className="project-image" />
+                <div className="project-image-wrapper">
+                  <img src="http://localhost:3845/assets/38ea09fa109c19e7f9511e7db8c846f4e114f32c.png" alt="WPR" className="project-image" />
+                </div>
                 <div className="project-info">
                   <h3>WPR</h3>
                 </div>
@@ -159,7 +188,9 @@ function App() {
               delay={0.5}
             >
               <div className="project-card">
-                <img src="http://localhost:3845/assets/52d2501615d253d551aaf86fa75b8a9787e41273.png" alt="NCSES" className="project-image" />
+                <div className="project-image-wrapper">
+                  <img src="http://localhost:3845/assets/52d2501615d253d551aaf86fa75b8a9787e41273.png" alt="NCSES" className="project-image" />
+                </div>
                 <div className="project-info">
                   <h3>NCSES</h3>
                 </div>
@@ -178,7 +209,9 @@ function App() {
               delay={0.6}
             >
               <div className="project-card">
-                <img src="http://localhost:3845/assets/80b21953ca0ad571beae5065399b2a00bd52ab38.png" alt="Hachette" className="project-image" />
+                <div className="project-image-wrapper">
+                  <img src="http://localhost:3845/assets/80b21953ca0ad571beae5065399b2a00bd52ab38.png" alt="Hachette" className="project-image" />
+                </div>
                 <div className="project-info">
                   <h3>Hachette</h3>
                 </div>
@@ -197,7 +230,9 @@ function App() {
               delay={0.7}
             >
               <div className="project-card">
-                <img src="http://localhost:3845/assets/b45ff6ab287af48eb9340251f09a4555dff1ee72.png" alt="TheWrap" className="project-image" />
+                <div className="project-image-wrapper">
+                  <img src="http://localhost:3845/assets/b45ff6ab287af48eb9340251f09a4555dff1ee72.png" alt="TheWrap" className="project-image" />
+                </div>
                 <div className="project-info">
                   <h3>TheWrap</h3>
                 </div>
@@ -349,11 +384,6 @@ function App() {
             <ThreeScene />
           </div>
 
-          {/* New 3D Letter A Scene */}
-          {/* <h3 style={{ textAlign: 'center', marginBottom: '20px' }}>3D Letter 'A'</h3>
-          <div style={{ height: '400px', width: '100%', border: '1px solid #333' }}>
-            <ThreeLetterA />
-          </div> */}
         </div>
       </section>
     </div>
