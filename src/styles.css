@@ -77,7 +77,7 @@ body {
 /* Hero Section with Background Effect */
 .hero {
     position: relative;
-    padding: 290px 0 150px;
+    padding: 400px 0 150px;
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
@@ -128,7 +128,8 @@ body {
 
 /* Projects Section */
 .projects {
-    padding: 0 0 150px 0;
+    padding: 100px 0 150px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .section-header {

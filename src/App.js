@@ -2,6 +2,7 @@ import React from 'react';
 import DarkVeil from './components/DarkVeil';
 import InteractiveBlob from './components/InteractiveBlob';
 import AnimatedContent from './components/AnimatedContent';
+import FadeContent from './components/FadeContent';
 import ParticleBackground from './components/ParticleBackground';
 import LiquidBackground from './components/LiquidBackground';
 import MagicalGradientBackground from './components/MagicalGradientBackground';
@@ -24,7 +25,7 @@ function App() {
           reverse={false}
           duration={0.8}
           ease="power3.out"
-          initialOpacity={0.2}
+          initialOpacity={0}
           animateOpacity
           scale={1.05}
           threshold={0.2}
@@ -45,12 +46,12 @@ function App() {
         <div className="container">
           <div className="hero-content">
             <AnimatedContent
-              distance={50}
+              distance={10}
               direction="horizontal"
-              reverse={true}
+              reverse={false}
               duration={0.8}
               ease="power3.out"
-              initialOpacity={0.2}
+              initialOpacity={0}
               animateOpacity
               scale={1.05}
               threshold={0.2}
@@ -66,7 +67,7 @@ function App() {
               reverse={false}
               duration={0.8}
               ease="power3.out"
-              initialOpacity={0.2}
+              initialOpacity={0}
               animateOpacity
               scale={1.05}
               threshold={0.2}
@@ -83,7 +84,7 @@ function App() {
                     '/hero-images/vice-hero-1.png',
                     '/hero-images/sciencenews-hero.png',
                   ]}
-                  interval={1400}
+                  interval={1600}
                   className="hero-bg"
                 />
               </div>
@@ -129,7 +130,7 @@ function App() {
                   <img src="http://localhost:3845/assets/079a65832b104090d909305eb3534b2b53a15cc4.png" alt="Savage Ventures" className="project-image" />
                 </div>
                 <div className="project-info">
-                  <h3>Savage Ventures</h3>
+                  <h3>VICE</h3>
                 </div>
               </div>
             </AnimatedContent>
@@ -369,6 +370,59 @@ function App() {
                   </div>
                 </AnimatedContent>
               </div>
+              <div className="partners-row">
+                <AnimatedContent
+                  distance={50}
+                  direction="vertical"
+                  reverse={false}
+                  duration={0.6}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  threshold={0.1}
+                  delay={0.5}
+                >
+                  <div className="partner-card glass-card">
+                    <div className="logo-container">
+                      <img src="/images/science-news-logo.png" alt="Science News" />
+                    </div>
+                  </div>
+                </AnimatedContent>
+                <AnimatedContent
+                  distance={50}
+                  direction="vertical"
+                  reverse={false}
+                  duration={0.6}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  threshold={0.1}
+                  delay={0.6}
+                >
+                  <div className="partner-card glass-card">
+                    <div className="logo-container">
+                      <img src="http://localhost:3845/assets/8b3b0e4231361f3dcd67aac86973de1969b57b85.svg" alt="Direct Relief" />
+                    </div>
+                  </div>
+                </AnimatedContent>
+                <AnimatedContent
+                  distance={50}
+                  direction="vertical"
+                  reverse={false}
+                  duration={0.6}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  threshold={0.1}
+                  delay={0.7}
+                >
+                  <div className="partner-card glass-card">
+                    <div className="logo-container">
+                      <img src="http://localhost:3845/assets/1642944defff67624b177d2510275fc939e248b6.svg" alt="DirectRelief" />
+                    </div>
+                  </div>
+                </AnimatedContent>
+              </div>
             </div>
           </div>
         </div>
@@ -377,7 +431,6 @@ function App() {
       {/* Three.js Demo Section */}
       <section className="three-demo" style={{ margin: '50px 0' }}>
         <div className="container">
-          <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Three.js Scene Demo</h2>
 
           {/* Existing Particle Scene */}
           <div style={{ height: '400px', width: '100%', border: '1px solid #333', marginBottom: '30px' }}>
